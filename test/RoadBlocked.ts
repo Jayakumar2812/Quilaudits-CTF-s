@@ -21,7 +21,7 @@ describe("Lock", function () {
     it("Should set the right unlockTime", async function () {
       const {roadClosed,attacker} = await loadFixture(deploymentState);
       
-      const AttackerContract = await ethers.getContractFactory("AttackerContract");
+      const AttackerContract = await ethers.getContractFactory("AttackerContract_RoadBlock");
       const attackerContract = await AttackerContract.deploy(roadClosed.address);
       
       expect(await roadClosed.isHacked() ).to.equal(true)

