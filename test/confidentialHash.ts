@@ -2,7 +2,7 @@ import { time, loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-describe("Lock", function () {
+describe("Confidential", function () {
   // We define a fixture to reuse the same setup in every test.
   // We use loadFixture to run this setup once, snapshot that state,
   // and reset Hardhat Network to that snapshot in every test.
@@ -18,7 +18,7 @@ describe("Lock", function () {
   }
 
   describe("Deployment", function () {
-    it("Should set the right unlockTime", async function () {
+    it("Should return true for checkthehash", async function () {
       const {confidential} = await loadFixture(deploymentState);
       
       const key1 = await ethers.provider.getStorageAt(confidential.address,4);
