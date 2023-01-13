@@ -48,9 +48,9 @@
       }
     
       describe("Deployment", function () {
-        it("Should stop withdraw function for anyone", async function () {
+        it("attcaker should be able to claim more than 1 NFT", async function () {
           const {safeNFT,owner,attacker} = await loadFixture(deploymentState);
-          // forcefully sending ether to increase contract balance
+          
           const AttackerContract = await ethers.getContractFactory("AttackerContract_SafeNFT");
           const attackerContract = await AttackerContract.connect(attacker).deploy();
             
